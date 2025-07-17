@@ -10,6 +10,7 @@ interface DashboardPageProps {
    };
 };
 
+
 const dasdBoard = ({searchParams} : DashboardPageProps) => {
    const {organization} = useOrganization();
    return (

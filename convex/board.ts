@@ -39,3 +39,47 @@ export const create = mutation({
          return board;
     }
 })
+
+
+export const remove = mutation({
+    args:{
+       id : v.id("boards")
+    },
+    handler : async (cntx,args) => {
+        const identity= await cntx.auth.getUserIdentity();
+
+        if(!identity) {
+            throw new Error("Unauthorized");
+        }
+
+        await cntx.db.delete(args.id);
+    },
+});
+
+export const update = mutation({
+    args:{
+       id : v.id("boards"),
+       title : v.string()
+    },
+    handler: async(cntx,args) => {
+        const title = args.title.trim();
+        const identity= await cntx.auth.getUserIdentity();
+
+        if(!identity) {
+            throw new Error("Unauthorized");
+        }
+
+        if(!title) {
+            throw new Error("Title is required");
+        }
+
+        if(title.length > 60) {
+           throw new Error("Title cannot be more than 60 chcracters");
+        }
+
+        const board = await cntx.db.patch(args.id, {
+           title : args.title
+        });
+        return board;
+    }
+});

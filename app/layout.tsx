@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import ConvexClientProvider from "@/provider/ConvexClientProvider";
 import { Toaster } from "sonner";
+import { ModalProvider } from "@/provider/modal-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <ClerkProvider>
             <ConvexClientProvider>
                <Toaster/>
+               <ModalProvider/>
                {children}
             </ConvexClientProvider>
         </ClerkProvider>

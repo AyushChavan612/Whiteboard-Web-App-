@@ -1,8 +1,8 @@
 "use client"
-import { EmptySearch } from "./empty-serach"
-import { EmptyFavorites } from "./empty-favorites"
+import { EmptySearch } from "./empty-serach";
+import { EmptyFavorites } from "./empty-favorites";
 import { EmptyBoard } from "./empty-boards";
-import { useQueries, useQuery } from "convex/react";
+import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { BoardCard } from "./board-card";
 import { NewBoardButton } from "./new-board-button";
@@ -76,7 +76,7 @@ export const BoardList=({orgId,query}: BoardListProps)=>{
                   authorName={board.authorName}
                   createdAt={board._creationTime}
                   orgId={board.orgId}
-                  isFavorite={true}
+                  isFavorite={board.isFavorite}
                />
             ))}
           </div>

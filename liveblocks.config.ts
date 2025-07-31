@@ -2,10 +2,13 @@ import { createClient } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
 const client = createClient({
+  throttle: 16,
   authEndpoint: "/api/liveblocks-auth",
 });
 
-type Presence = {};
+type Presence = {
+  cursor:{x:number, y:number} | null;
+};
 type Storage = {};
 type UserMeta = {
   id?: string;

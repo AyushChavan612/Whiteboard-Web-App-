@@ -94,7 +94,7 @@ export type CanvasState =
     |
     {
         mode: CanvasMode.Pressing;
-        current:Point;
+        current: Point;
     }
     |
     {
@@ -105,18 +105,18 @@ export type CanvasState =
     |
     {
         mode: CanvasMode.Translating;
-         origin: Point;
+        origin: Point;
     }
     |
     {
         mode: CanvasMode.Inserting;
-        LayerType: LayerType.Ellipse | LayerType.Note | LayerType.Path | LayerType.Rectangle | LayerType.Text;
+        LayerType: LayerType.Ellipse | LayerType.Note | LayerType.Rectangle | LayerType.Text;
     }
     |
     {
         mode: CanvasMode.Resizing;
-        initialBounds:XYWH;
-        corner:Side;
+        initialBounds: XYWH;
+        corner: Side;
     }
     |
     {
@@ -132,3 +132,5 @@ export enum CanvasMode {
     Resizing,
     Pencil,
 };
+
+export type Layer = RectangleLayer | EllipseLayer | PathLayer | TextLayer | NoteLayer;

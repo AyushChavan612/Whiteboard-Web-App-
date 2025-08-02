@@ -4,6 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Info } from "./info";
 import { Participants } from "./participants";
 import { Toolbar } from "./toolbar";
+import { SelectionTools } from "./selection-tools";
 
 import {
     Camera,
@@ -302,6 +303,10 @@ export const Canvas = ({
                 canUndo={canUndo}
                 undo={history.undo}
                 redo={history.redo}
+            />
+            <SelectionTools
+                camera={camera}
+                setLastUsedColor={() => { }}
             />
             <svg
                 className="h-[100vh] w-[100vw]"

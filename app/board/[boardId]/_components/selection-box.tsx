@@ -54,6 +54,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Top+Side.Left,bounds);
                             }}
                         />
                         <rect
@@ -68,6 +69,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Top,bounds);
                             }}
                         />
                         <rect
@@ -82,6 +84,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Top+Side.Right,bounds);
                             }}
                         />
                         <rect
@@ -96,6 +99,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Right,bounds);
                             }}
                         />
                         <rect
@@ -110,6 +114,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Bottom+Side.Right,bounds);
                             }}
                         />
                         <rect
@@ -124,6 +129,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Bottom,bounds);
                             }}
                         />
                         <rect
@@ -138,6 +144,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Bottom+Side.Left,bounds);
                             }}
                         />
                         <rect
@@ -152,6 +159,7 @@ export const SelectionBox = memo(
                             }}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
+                                onReszieHandlePointerDown(Side.Left,bounds);
                             }}
                         />
                     </>

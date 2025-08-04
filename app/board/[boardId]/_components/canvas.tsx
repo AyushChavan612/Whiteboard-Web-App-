@@ -175,8 +175,8 @@ export const Canvas = ({
         setCamera((camera) => ({
             x: camera.x - e.deltaX,
             y: camera.y - e.deltaY
-        }));
-    }, []);
+        }))
+    }, [    ]);
 
     const onPointerMove = useMutation((
         { setMyPresence },
@@ -362,7 +362,7 @@ export const Canvas = ({
             >
                 <g
                     style={{
-                        transform: `translate(${camera.x})px, ${camera.y}px`
+                        transform: `translate(${camera.x}px, ${camera.y}px)`,
                     }}
                 >
                     {layerIds.map((layerId) => (

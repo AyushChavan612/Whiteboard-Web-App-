@@ -2,8 +2,6 @@
 
 import { useOthers, useSelf } from "@/liveblocks.config";
 import { UserAvatar } from "./user-avatar";
-import { currentUser } from "@clerk/nextjs/server";
-import { User } from "lucide-react";
 import { connectionIdToColor } from "@/lib/utils";
 
 const MAX_SHOWN_USERS = 2;

@@ -8,8 +8,6 @@ import { Ellipse } from "./ellipse";
 import { Text } from "./text";
 import { Note } from "./note";
 import { Path } from "./path";
-import { colorToCss } from "@/lib/utils";
-import { useSelf } from "@liveblocks/react";
 
 interface LayerPreviewProps {
     id: string;

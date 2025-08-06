@@ -1,21 +1,23 @@
+import { Room } from "./_components/room";
 import { Canvas } from "./_components/canvas";
 import { Loading } from "./_components/loading";
-import { Room } from "./_components/room";
 
-interface BoardIdPageProps{
-   params:{
-    boardId : string,
-   };
-};
+interface BoardIdPageProps {
+    params: Promise<{
+        boardId: string;
+    }>;
+}
 
-const boardIdPage = ({
-    params
-} : BoardIdPageProps) => {
+const BoardIdPage = async ({
+    params,
+}: BoardIdPageProps) => {
+    const { boardId } = await params;
+
     return (
-        <Room roomId={params.boardId} fallback={<Loading/>}>
-          <Canvas boardId={params.boardId}/>
+        <Room roomId={boardId} fallback={<Loading />}>
+            <Canvas boardId={boardId} />
         </Room>
     );
 };
 
-export default boardIdPage;
+export default BoardIdPage;

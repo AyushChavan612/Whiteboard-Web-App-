@@ -31,12 +31,11 @@ import {
 } from "@/liveblocks.config";
 
 import { CursorPresence } from "./cursor-presence";
-import { colorToCss, connectionIdToColor, findIntersectingLayersWithRectangle, penPointsToPathLayer, pointerEventToCanvasPoint, resizeBounds } from "@/lib/utils";
+import { connectionIdToColor, findIntersectingLayersWithRectangle, penPointsToPathLayer, pointerEventToCanvasPoint, resizeBounds } from "@/lib/utils";
 import { nanoid } from "nanoid";
 import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "./layer-preview";
 import { SelectionBox } from "./selection-box";
-import { useDebounce } from "@uidotdev/usehooks";
 import { useEffect } from "react";
 
 const MAX_LAYERS = 100;
@@ -52,7 +51,7 @@ export const Canvas = ({
         mode: CanvasMode.None,
     });
     const [camera, setCamera] = useState<Camera>({ x: 0, y: 0 });
-    const [lastUsedColor, setLastUsedColor] = useState<Color>({
+    const [lastUsedColor] = useState<Color>({
         r: 255,
         g: 255,
         b: 255,

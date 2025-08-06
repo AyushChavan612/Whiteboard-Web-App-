@@ -121,7 +121,7 @@ export type CanvasState =
     |
     {
         mode: CanvasMode.Pencil;
-    }
+    };
 
 export enum CanvasMode {
     None,
